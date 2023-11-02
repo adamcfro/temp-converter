@@ -1,2 +1,2 @@
 # temp-converter
-Application to convert temperatures
+A simple application that allows users to convert temperatures from Fahrenheit to Celsius, or from Celsius to Fahrenheit.
