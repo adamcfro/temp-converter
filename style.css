@@ -30,16 +30,22 @@ hr {
   margin: 0;
 }
 
+#scale {
+  color: black;
+  background-color: white;
+  text-align-last: center;
+}
+
 #input,
 #results {
-  color: #696969;
   padding: 0;
 }
 
 #results {
   background-color: white;
-  font-size: 14px;
-  line-height: 40px;
+  line-height: 42px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #submit {
@@ -53,7 +59,7 @@ hr {
   text-align: center;
   margin: 1em;
   height: 40px;
-  width: 200px;
+  width: 250px;
   border-radius: 5px;
   border: none;
 }
