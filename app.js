@@ -1,31 +1,42 @@
 /**
- * This function takes in the event parameter and converts a user's input from
- * Fahrenheit to Celsius, or vice versa, and displays the results in the user's
- * browser.
+ * Gets Fahrenheit input temperature from user, converts the temperature to
+ * Celsius, and displays the converted temperature in the Celsius input field.
  *
  * @format
  * @param {Event} e - The event parameter
  */
+function fahrenheitToCelsius(e) {
+  const temp = e.target.firstChild.nextElementSibling.value;
+  const cels = document.querySelector("#celsius");
+  cels.value = Math.floor(((temp - 32) * 5) / 9);
 
-function convertTemperature(e) {
   e.preventDefault();
-
-  const scale = document.querySelector("#scale");
-  const input = document.querySelector("#input");
-  const results = document.querySelector("#results");
-
-  while (results.firstChild) {
-    results.removeChild(results.firstChild);
-  }
-  let val = input.value;
-  if (scale.value === "Fahrenheit") {
-    val = Math.floor((val - 32) / 1.8) + "°C";
-  } else {
-    val = Math.floor(val * 1.8 + 32) + "°F";
-  }
-  let text = document.createTextNode(val);
-  results.appendChild(text);
-  input.value = "";
 }
 
-document.querySelector("#form").addEventListener("submit", convertTemperature);
+/**
+ * Gets Celsius input temperature from user, converts the temperature to
+ * Fahrenheit, and displays the converted temperature in the Fahrenheit input
+ * field.
+ *
+ * @param {Event} e - The event parameter
+ */
+function celsiusToFahrenheit(e) {
+  const temp = e.target.firstChild.nextElementSibling.value;
+  const fahr = document.querySelector("#fahrenheit");
+  fahr.value = Math.floor((temp * 9) / 5) + 32;
+
+  e.preventDefault();
+}
+
+/**
+ * Adds event listeners and starts the app.
+ */
+function startApp() {
+  const fahrToCels = document.querySelector("#fahr-to-cels");
+  fahrToCels.addEventListener("submit", fahrenheitToCelsius);
+
+  const celsToFahr = document.querySelector("#cels-to-fahr");
+  celsToFahr.addEventListener("submit", celsiusToFahrenheit);
+}
+
+startApp();
