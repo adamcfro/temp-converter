@@ -7,29 +7,39 @@
   <meta name="description" content="Free Temperature Conversion Tool">
   <meta name="keywords" content="temperature conversion fahrenheit celsius">
   <meta name="author" content="Adam Froehlich">
+ 
   <!-- Style Sheets -->
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
   <!-- Script -->
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header id="main-header">
-    <h1 id="header">TEMPERATURE CONVERTER</h1>
-    <hr>
-  </header>
-  <main id="container">
-    <form action="#" id="form">
-      <select name="scale" id="scale" class="flex-item">
-        <option value="Fahrenheit">Fahrenheit to Celsius</option>
-        <option value="Celsius">Celsius to Fahrenheit</option>
-      </select>
-      <input type="text" id="input" class="flex-item" autocomplete="off" inputmode="numeric" pattern="[0-9\-]+" placeholder="Enter Temp Here"/>
-      <div id="results" class="flex-item">Results Here</div>
-      <input type="submit" value="SUBMIT" class="flex-item" id="submit">
-    </form>
-  </main>
+  <div class="container">
+    <section class="top">
+      <header class="top-header">
+        <h1>FAHRENHEIT</h1>
+      </header>
+      <form action="#" id="fahr-to-cels">
+        <input id="fahrenheit" type="text" pattern="[0-9]+" placeholder="32" onfocus="this.placeholder=''" onfocus="this.value=''" onfocusout="this.placeholder='...'" autocomplete="off">
+      </form>
+    </section>
+    <section class="middle">
+      <div class="triangle"></div>
+    </section>
+    <section class="bottom">
+      <form action="#" id="cels-to-fahr">
+        <input id="celsius" type="text" pattern="[0-9]+" placeholder="0" onfocus="this.placeholder=''" onfocus="this.value=''" onfocusout="this.placeholder='...'" autocomplete="off">
+      </form>
+      <header class="bottom-header">
+        <h1>CELSIUS</h1>
+      </header>
+    </section>
+  </div>
 </body>
 </html>
