@@ -1,65 +1,110 @@
+:root {
+  --twidth: calc(100svw / 6);
+  --theight: calc(var(--twidth) * 3);
+  --red: #FF4F4F;
+}
+
+@media screen and (min-width: 800px) {
+  :root {
+    --twidth: calc(50svw / 6);
+    --theight: calc(var(--twidth) * 6);
+  }
+
+  triangle {
+    border-left: var(--height) solid transparent;
+    border-right: var(--theight) solid transparent;
+    border-top: var(--twidth) solid var(--red);
+  }
+}
+
+@media screen and (orientation: landscape) {
+  :root {
+      --twidth: calc(50svw / 6);
+      --theight: calc(var(--twidth) * 6);
+  }
+  
+  triangle {
+    border-left: var(--height) solid transparent;
+    border-right: var(--theight) solid transparent;
+    border-top: var(--twidth) solid var(--red);
+  }
+}
+
 body {
   padding: 0;
   margin: 0;
   height: 100svh;
-  font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
-  text-align: center;
-  background: #ED4264;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #FFEDBC, #ED4264);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #FFEDBC, #ED4264);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  padding: 2em 0;
-}
-
-hr {
-  margin-top: 4em;
-  height: 5px;
-  background-image: linear-gradient(90deg, red, transparent);
-}
-
-#header {
-  padding-top: 3em;
+h1 {
   margin: 0;
+  font-size: 30px;
 }
 
-#scale {
-  color: black;
-  background-color: white;
-  text-align-last: center;
-}
-
-#input,
-#results {
-  padding: 0;
-}
-
-#results {
-  background-color: white;
-  line-height: 42px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#submit {
-  color: white;
-  background-color: #378DF0;
-  font-weight: bold;
-}
-
-.flex-item {
-  display: block;
-  text-align: center;
-  margin: 1em;
-  height: 40px;
-  width: 250px;
-  border-radius: 5px;
+input[type=text] {
   border: none;
+  margin: .2em;
+  width: 150px;
+  text-align: center;
+  font-size: 60px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#fahrenheit {
+  color: white;
+  background-color: transparent;
+}
+
+#fahrenheit::placeholder {
+  color: white;
+}
+
+#celsius {
+  padding-top: .8em;
+  background-color: transparent;
+}
+
+#celsius,
+#celsius::placeholder,
+.bottom {
+  color: var(--red);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: var(--red);
+  height: 40svh;
+}
+
+.top-header {
+  margin-top: 3em;
+}
+
+.triangle {
+  border-left: var(--theight) solid transparent;
+  border-right: var(--theight) solid transparent;
+  border-top: var(--twidth) solid var(--red);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40svh;
+}
+
+.bottom-header {
+  text-align: center;
+  margin-bottom: 3em;
 }
