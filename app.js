@@ -29,6 +29,19 @@ function celsiusToFahrenheit(e) {
 }
 
 /**
+ * Clears the target input. Changes target placeholder and value to an empty
+ * string "".
+ *
+ * @param {Event} e - The event parameter
+ */
+function clearInput(e) {
+  if (e.target.id === "fahrenheit" || e.target.id === "celsius") {
+    e.target.placeholder = "";
+    e.target.value = "";
+  }
+}
+
+/**
  * Adds event listeners and starts the app.
  */
 function startApp() {
@@ -37,6 +50,9 @@ function startApp() {
 
   const celsToFahr = document.querySelector("#cels-to-fahr");
   celsToFahr.addEventListener("submit", celsiusToFahrenheit);
+
+  document.querySelector("#fahrenheit").addEventListener("click", clearInput);
+  document.querySelector("#celsius").addEventListener("click", clearInput);
 }
 
 startApp();
