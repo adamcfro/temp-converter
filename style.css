@@ -23,7 +23,7 @@
   .container {
     position: fixed;
     top: 50%;
-    box-shadow: 3px 3px var(--gray);
+    box-shadow: .1875rem .1875rem var(--gray);
     background-color: var(--white);
     transform: translateY(-50%);
   }
@@ -59,15 +59,15 @@ body {
 
 h1 {
   margin: 0;
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 
 input[type=text] {
-  width: 150px;
-  margin: .2em;
+  width: 9.375rem;
+  margin: .75rem;
   border: none;
   text-align: center;
-  font-size: 60px;
+  font-size: 3.75rem;
 }
 
 input:focus {
